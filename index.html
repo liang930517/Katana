@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Katana</title>
+
+	<!-- Materialize -->
+	<link href="./css/Materialize.css" rel="stylesheet" type="text/css" />
+	<script src="./css/Materialize.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+	<script src="./js/main.js"></script>
+
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/183516/gilroy-webfont.css">
+
+</head>
+
+<body>
+	<header>
+
+		<div id="nav_bar">
+			<b>JAPANESE SAMURAI SWORD SHOP FROM JAPAN TOKYO.</b>
+			<div class="wrapper">
+				<img src="./img/logo.png" alt="" id="logo">
+
+				<b class="nav_item" onclick="JumpContent('#sec_2')">ABOUT
+					<img src="./img/nav.png" alt="">
+				</b>
+				<b class="nav_item" onclick="JumpContent('#sec_3')">MASTERPIECES
+					<img src="./img/nav.png" alt="">
+				</b>
+				<b class="nav_item" onclick="JumpContent('#sec_4')">CONTACT
+					<img src="./img/nav.png" alt="">
+				</b>
+
+			</div>
+		</div>
+
+		<div id="nav_bar_m">
+			<img src="./img/logo.png" alt="">
+			<b>Katana かたな</b>
+
+			<!-- <div id="panel_m">
+				<img src="./img/66.png" alt="">
+				<b class="nav_item nav_item_m1" onclick="JumpContent('#sec_2')">ABOUT</b>
+				<b class="nav_item nav_item_m2" onclick="JumpContent('#sec_3')">MASTERPIECES</b>
+				<b class="nav_item nav_item_m3" onclick="JumpContent('#sec_4')">CONTACT</b>
+			</div> -->
+
+			<div  id="panel_m">
+				<img src="./img/66.png" alt="">
+				<ul class="Menu-list" data-offset="10">
+					
+
+					<li class="nav_item_m1 Menu-list-item" data-offset="16" onclick="JumpContent('#sec_2')">
+						About
+						<span class="Mask"><span>About</span></span>
+						<span class="Mask"><span>About</span></span>
+					</li>
+
+					<li class="nav_item_m2 Menu-list-item" data-offset="10" onclick="JumpContent('#sec_3')">
+						MASTER
+						<span class="Mask"><span>MASTER</span></span>
+						<span class="Mask"><span>MASTER</span></span>
+					</li>
+
+					<li class="nav_item_m3 Menu-list-item" data-offset="8" onclick="JumpContent('#sec_4')">
+						Contact
+						<span class="Mask"><span>Contact</span></span>
+						<span class="Mask"><span>Contact</span></span>
+					</li>
+
+				</ul>
+			</div>
+
+
+			<style>
+				body {
+					font-family: "Gilroy ExtraBold", system-ui, sans-serif;
+					font-style: normal;
+					font-weight: normal;
+					-webkit-font-smoothing: antialiased;
+					-webkit-font-kerning: normal;
+					-webkit-text-size-adjust: 100%;
+				}
+
+
+
+				/* html,
+				body {
+					width: 100vw;
+					height: 100vh;
+				}
+
+				body {
+					background: linear-gradient(45deg, #02001f, #1f1b4e);
+					transform-style: preserve-3d;
+					transform: perspective(60rem);
+					position: fixed;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				} */
+
+				.Menu-list {
+					margin-top: 70%;
+
+					
+					font-size: 4.25rem;
+					line-height: 1.2;
+					text-transform: uppercase;
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					transform: rotateX(-10deg) rotateY(20deg);
+				}
+
+				.Menu-list-item {
+					position: relative;
+					color: transparent;
+					cursor: pointer;
+				}
+
+				.Menu-list-item::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 49%;
+					left: -10%;
+					right: -10%;
+					height: 4px;
+					border-radius: 4px;
+					margin-top: -2px;
+					background: #fff7af;
+					transform: scale(0) translateX(0px)  skewY(0deg);
+					transition: transform 0.3s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+					z-index: 1;
+				}
+
+				.Mask {
+					display: block;
+					position: absolute;
+					overflow: hidden;
+					color: #b59b60;
+					top: 0;
+					height: 49%;
+					transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+					transform: skewX(0deg) translateX(0px) skewY(0deg);
+				}
+
+				.Mask span {
+					display: block;
+				}
+
+				.Mask+.Mask {
+					top: 48.9%;
+					height: 51.1%;
+				}
+
+				.Mask+.Mask span {
+					transform: translateY(-49%);
+				}
+
+				.Menu-list-item:hover .Mask,
+				.Menu-list-item:active .Mask {
+					color: rgba(255, 0, 0, 0.849);
+					transform: skewX(0deg) skewY(-5deg) translateX(3px) translateY(-5px);
+				}
+
+				.Menu-list-item:hover .Mask+.Mask,
+				.Menu-list-item:active .Mask+.Mask {
+					transform: skewX(0deg) skewY(-5deg) translateX(-3px) translateY(5px);
+				}
+
+				.Menu-list-item:hover::before,
+				.Menu-list-item:active::before {
+					transform: scale(1) translateX(0px) skewY(-5deg) skewX(270deg);
+				}
+			</style>
+
+
+			<script>
+				var $menu = $('.Menu-list'),
+					$item = $('.Menu-list-item'),
+					w = $(window).width(), //window width
+					h = $(window).height(); //window height
+
+				$(window).on('mousemove', function (e) {
+					var offsetX = 0.5 - e.pageX / w, //cursor position X
+						offsetY = 0.5 - e.pageY / h, //cursor position Y
+						dy = e.pageY - h / 2, //@h/2 = center of poster
+						dx = e.pageX - w / 2, //@w/2 = center of poster
+						theta = Math.atan2(dy, dx), //angle between cursor and center of poster in RAD
+						angle = theta * 180 / Math.PI - 90, //convert rad in degrees
+						offsetPoster = $menu.data('offset'),
+						transformPoster = 'translate3d(0, ' + -offsetX * offsetPoster + 'px, 0) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)';
+					//poster transform
+
+					//get angle between 0-360
+					if (angle < 0) {
+						angle = angle + 360;
+					}
+
+					//poster transform
+					$menu.css('transform', transformPoster);
+
+					//parallax for each layer
+					$item.each(function () {
+						var $this = $(this),
+							offsetLayer = $this.data('offset') || 0,
+							transformLayer = 'translate3d(' + offsetX * offsetLayer + 'px, ' + offsetY * offsetLayer + 'px, 20px)';
+
+						$this.css('transform', transformLayer);
+					});
+				});
+			</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="info_btn_m">
+				<div class="line_m"></div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<div id="sec_1">
+		<img src="./img/1.png" alt="" class="katana">
+		<img src="./img/2.png" alt="" class="katana">
+		<img src="./img/3.png" alt="" class="katana">
+		<img src="./img/4.png" alt="" class="katana">
+		<img src="./img/5.png" alt="" class="katana">
+		<img src="./img/6.png" alt="" class="katana">
+		<img src="./img/7.png" alt="" class="katana">
+
+		<div class="seperate_block">
+			<!-- <img src="./img/calligraphy.png" alt=""> -->
+		</div>
+	</div>
+
+
+	<div id="sec_2">
+		<div class="top">
+			<img src="./img/sec2_main.png" alt="">
+			<b>
+				ABOUT
+			</b>
+		</div>
+		<div class="mid">
+			<div class="wrapper">
+				All swords from Thaitsuki are handmade by sword craftsmen and artisans who have served years of
+				apprenticeship under the master. Each order is hand crafted using traditional Japanese methods of sword
+				production.
+			</div>
+		</div>
+		<div class="seperate_block"></div>
+	</div>
+
+
+	<div id="sec_3">
+
+		<div class="top">
+			<img src="./img/masterpieces/title_bg.png">
+			<b>
+				MASTERPIECES
+			</b>
+		</div>
+
+		<div id="carousel_container" class="carousel_m">
+			<div class="carousel_m-item">
+				<img src="./img/masterpieces/1.png">
+			</div>
+			<div class="carousel_m-item">
+				<img src="./img/masterpieces/2.png" style="transform: scaleX(-1);">
+			</div>
+			<div class="carousel_m-item">
+				<img src="./img/masterpieces/3.png">
+			</div>
+			<div class="carousel_m-item">
+				<img src="./img/masterpieces/4.png">
+			</div>
+			<div class="carousel_m-item">
+				<img src="./img/masterpieces/5.png" style="transform: scaleX(-1);">
+			</div>
+		</div>
+
+		<h1 id="name_text">KKKK</h1>
+		<div id="descr_box"></div>
+		<div id="more_info_btn">
+			MORE INFO
+		</div>
+
+		<div class="seperate_block"></div>
+
+	</div>
+
+
+	<!-- CONTACT -->
+	<div id="sec_4">
+		<div class="top">
+			<img src="./img/sec4_main.png" alt="">
+			<b>
+				CONTACT
+			</b>
+		</div>
+
+		<div class="mid">
+			<div class="note">
+				A katana (刀 or かたな) is a Japanese sword characterized by a curved,
+				single-edged blade with a circular or squared guard and long grip to accommodate two hands.
+				It was used by the samurai of ancient and feudal Japan.
+			</div>
+
+			<div id="google_map">
+				<iframe width="100%" height="450" frameborder="0" style="border:0"
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBlmpYWt_ORTp7gk7_0MMWcGYhDsyWj-2I&q=OOTEMORI"
+					allowfullscreen>
+				</iframe>
+			</div>
+		</div>
+
+		<div class="seperate_block"></div>
+
+	</div>
+
+	<div id="sec_5">
+		<img src="./img/social.png" alt="">
+		<div>
+			JAPANESE SAMURAI SWORD SHOP FROM JAPAN TOKYO.
+			<img src="./img/logo.png" alt="" id="logo">
+			© 2020 WOLF. All Rights Reserved
+		</div>
+	</div>
+
+</body>
+
+
+</html>
